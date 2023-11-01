@@ -1,3 +1,33 @@
+<?php
+require_once('../config.php');
+
+if (isset($_POST['submit'])) {
+  $id_pasien = $_POST['id_pasien'];
+  $nomor_identitas = $_POST['nomor_identitas'];
+  $nama_pasien = $_POST['nama_pasien'];
+  $jenis_kelamin = $_POST['jenis_kelamin'];
+  $alamat = $_POST['alamat'];
+  $no_telpon = $_POST['no_telpon'];
+
+  $query = "INSERT INTO pasien VALUES ('$id_pasien','$nomor_identitas','$nama_pasien','$jenis_kelamin','$alamat','$no_telpon')";
+  $result = mysqli_query($mysqli, $query);
+} else {
+  $id_pasien = "";
+  $nomor_identitas = "";
+  $nama_pasien = "";
+  $jenis_kelamin = "";
+  $alamat = "";
+  $no_telpon = "";
+}
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
 
@@ -106,7 +136,7 @@
                         </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Tambah</button>
                           </div>
                         </div>
                       </form>

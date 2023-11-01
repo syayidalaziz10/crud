@@ -2,7 +2,7 @@
 
 require_once('../config.php');
 
-$pasiens = mysqli_query($mysqli, "SELECT * FROM `pasien`");
+$pasiens = mysqli_query($mysqli, "SELECT *  FROM `pasien`");
 
 
 
@@ -97,8 +97,9 @@ $pasiens = mysqli_query($mysqli, "SELECT * FROM `pasien`");
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href=""><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                              <a class="dropdown-item" href=""><i class="bx bx-trash me-1"></i> Delete</a>
+                              <a class="dropdown-item" href="editdata.php?id=<?= $pasien['id_pasien'] ?> "><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <!-- <form action="delete.php" action="get"></form> -->
+                              <a class="dropdown-item" href="delete.php?id=<?= $pasien['id_pasien'] ?> "><i class="bx bx-trash me-1"></i> Delete</a>
                             </div>
                           </div>
                         </td>
